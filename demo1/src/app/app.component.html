@@ -1,0 +1,52 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1><button (click)="fn()">Generate</button><br/>
+
+  <label [ngClass]="myclass">{{num1}}</label>
+  +
+  <label>{{num2}}</label>
+  =
+  <input type="text" [(ngModel)]="res">
+
+  <button (click)="gen()">gen</button>
+  <div *ngFor="let q of qs">
+    {{q.num1}} + {{q.num2}}
+    =
+    <input [(ngModel)]="q.res"/>
+  </div>
+
+  <button (click)="checkexam()">check Exam</button>
+  <button (click)="check()">Check</button>
+
+  <label style="color: red">{{resStr}}</label>
+
+  <input type="text" [value]="f3()" (keypress)="kp($event)"/>
+
+  <div [ngClass]="['alert', v1]" role="alert">kkk</div>
+
+  <div *ngIf="res>0;then rts else xyz">
+  </div>
+  <select [(ngModel)]="Item">
+    <option *ngFor="let item of Items"
+            [value]="item.id">
+      {{item.name}}
+    </option>
+
+  </select>
+  <ng-template #rts>
+   <h2> val: {{resStr}} </h2>
+  </ng-template>
+  <ng-template #xyz>
+    <h2>Solve please</h2>
+  </ng-template>
+
+  <h4 *ngFor="let n of ar">Name : {{n}} </h4>
+
+  <h5 *ngFor="let c of customers">val:{{c.Name}} : {{c.City}}</h5>
+  val:{{bl}}
+  <input type="checkbox" [(ngModel)]="bl" value="Checkbox">
+</div>
+
+
